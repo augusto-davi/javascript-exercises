@@ -1,6 +1,6 @@
 function binarySearch(array, lookupNum) {
   let firstIndex = 0;
-  let midIndex = parseInt(array.length / 2);
+  let midIndex = Math.floor(array.length / 2);
   let lastIndex = array.length - 1;
 
   do {
@@ -8,7 +8,7 @@ function binarySearch(array, lookupNum) {
     else if (array[midIndex] < lookupNum) firstIndex = midIndex + 1;
     else if (array[midIndex] > lookupNum) lastIndex = midIndex - 1;
 
-    midIndex = parseInt(firstIndex + (lastIndex - firstIndex) / 2);
+    midIndex = Math.floor(firstIndex + (lastIndex - firstIndex) / 2);
   } while (lastIndex >= firstIndex);
 
   return -1;
